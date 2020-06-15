@@ -1,37 +1,34 @@
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField
-from wtforms.validators import InputRequired, Email, Length
-import email_validator
+from wtforms import StringField, PasswordField
+from wtforms.validators import InputRequired, Email, Length, AnyOf
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "SomeSecretKey!"
 Bootstrap(app)
+app.config['SECRET_KEY'] = 'KIrlL5QfT3eORaIqa65tPIpUuRgHAKeO'
 
 class LoginForm(FlaskForm):
-    username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
-    password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
-    remember = BooleanField('remember me')
+	username = StringField('username', validators=[InputRequired(), Email(message='I don\'t like your email.')])
+	password = PasswordField('password', validators=[InputRequired(), Length(min=5, max=10), AnyOf(['secret', 'password'])])
 
-class RegisterForm(FlaskForm):
-    email = StringField('email', validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)])
-    username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
-    password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
-    
-@app.route('/')
+@app.route('/Login.html', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+	form = LoginForm()
+	if form.validate_on_submit():
+		return 'Form Successfully Submitted!'
+	return render_template('login.html', form=form)
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    return render_template('login.html', form=form)
+class SignupForm(FlaskForm):
+    fist_name = StringField('First Name', validators=[InputRequired()])
+    last_name = StringField('Last Name', validators=[InputRequired()])
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup.html', methods=['GET', 'POST'])
 def signup():
-    form = RegisterForm()
-    return render_template('signup.html', form=form)
+	form = SignupForm()
+	if form.validate_on_submit():
+		return 'Form Successfully Submitted!'
+	return render_template('signup.html', form=form)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+	app.run(debug=True)
