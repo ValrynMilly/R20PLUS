@@ -7,6 +7,10 @@ from flask import render_template, redirect, url_for, request
 from flask import Flask, render_template
 
 
+@app.route('/')
+def home():
+    return render_template('home.html', title='Home')
+
 @app.route('/signup.html', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
