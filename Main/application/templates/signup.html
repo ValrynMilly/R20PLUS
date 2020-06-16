@@ -2,7 +2,7 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginsignup.css') }}">
 {{super()}}
 {% endblock %}
 
@@ -19,7 +19,7 @@ Sign Up
 <div class="signup-form">
     <form action="" method="post">
 		<h2>Register</h2>
-		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
+		<p class="hint-text">Create your account. It's free and super easy :P.</p>
         <div class="form-group">
 			<div class="row">
 				<div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
@@ -39,6 +39,6 @@ Sign Up
             <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
         </div>
     </form>
-	<div class="text-center">Already have an account? <a href="Login.html">Sign in</a></div>
+	<div class="text-center">Already have an account? <a href="login.html">Sign in</a></div>
 </div>
 {% endblock %}
