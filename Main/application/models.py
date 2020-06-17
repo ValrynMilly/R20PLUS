@@ -6,12 +6,12 @@ def load_user(id):
     return Users.query.get(int(id))
 
 class Users(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50), nullable=False, unique=True)
-    last_name = db.Column(db.String(50), nullable=False, unique=True)
-    username = db.Column(db.String(30), nullable=False, unique=True)
-    email = db.Column(db.String(120), nullable=False, unique=True)
-    password = db.Column(db.String(500), nullable=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    first_name = db.Column(db.String(50), nullable=False, unique=False, autoincrement=True)
+    last_name = db.Column(db.String(50), nullable=False, unique=False, autoincrement=True)
+    username = db.Column(db.String(30), nullable=False, unique=True, autoincrement=True)
+    email = db.Column(db.String(120), nullable=False, unique=True, autoincrement=True)
+    password = db.Column(db.String(500), nullable=False, autoincrement=True)
     
     
     def __repr__(self):
