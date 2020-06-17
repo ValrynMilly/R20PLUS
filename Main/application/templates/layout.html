@@ -1,0 +1,28 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block meta %}
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{super()}}
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/cover.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <body>
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h4 class="masthead-brand">R20+</h4>
+          <nav class="nav nav-masthead">
+            <a class="nav-link" href="">Home</a>
+            <a class="nav-link" href="">About</a>
+            <a class="nav-link" href="">My Character</a>
+            <a class="nav-link" href="login.html">Login</a>
+          </nav>
+        </div>
+      </div>
+    </body>
+{% endblock %}
