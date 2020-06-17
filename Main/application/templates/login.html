@@ -3,6 +3,8 @@
 
 {% block styles %}
 <link href="{{ url_for('static', filename='css/loginsignup.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/cover.css') }}" rel="stylesheet">
 {{super()}}
 {% endblock %}
 
@@ -12,6 +14,21 @@ Sign in
 
 {% block content %}
 <div class="signup-form">
+  <div class="masthead clearfix">
+    <div class="inner">
+      <h4 class="masthead-brand">R20+</h4>
+      <nav class="nav nav-masthead">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="">About</a>
+        <a class="nav-link" href="">My Characters</a>
+        <a class="nav-link" href="login.html">Login</a>
+      </nav>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
   <form action="" method="post">
   <h2>Sign in</h2>
   <p class="hint-text">To manage your account and characters you must sign in, thank you.</p>

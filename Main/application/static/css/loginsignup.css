@@ -79,7 +79,7 @@ body{
     padding-left: 10px;
 }    	
 .signup-form a{
-    color: rgb(0, 0, 0) !important;
+    color: #b85c5c !important;
     text-decoration: underline;
 }
 .signup-form a:hover{
