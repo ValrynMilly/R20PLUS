@@ -1,0 +1,99 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+<link href="{{ url_for('static', filename='css/loginsignup.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/cover.css') }}" rel="stylesheet">
+{{super()}}
+{% endblock %}
+
+{% block title %}
+Update Character
+{% endblock %}
+
+{% block content %}
+<div class="signup-form">
+    <div class="masthead clearfix">
+      <div class="inner">
+        <h4 class="masthead-brand">R20+</h4>
+        <nav class="nav nav-masthead">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="">About</a>
+          <a class="nav-link" href="">My Characters</a>
+          <a class="nav-link" href="login.html">Login</a>
+        </nav>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  <h1 class="my-4">Update Data</h1>
+    <form action="/update/{{ character.id }}" method="POST">
+        <div class="form-row">
+            <h5>Character Name</h5>
+            <div class="col-sm-6 my-1">
+            <input type="text" class="form-control" name="name" value="{{ character.Characte_name }}">
+        </div>
+        <div class="col-sm-2 my-1">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Strength</h5>
+            <div class="col-sm-6 my-4">
+            <input type="text" class="form-control" name="strength" value="{{ character.strength }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Dexterity</h5>
+            <div class="col-sm-6 my-4">
+            <input type="text" class="form-control" name="dexterity" value="{{ character.dexterity }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Constitution</h5>
+            <div class="col-sm-6 my-4">
+            <input type="text" class="form-control" name="constitution" value="{{ character.constitution }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Intelligence</h5>
+            <div class="col-sm-6 my-4">
+            <input type="text" class="form-control" name="intelligence" value="{{ character.intelligence }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Wisdom</h5>
+            <div class="col-sm-6 my-4">
+            <input type="text" class="form-control" name="wisdom" value="{{ character.wisdom }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Charisma</h5>
+            <div class="col-sm-6 my-4">
+            <input type="text" class="form-control" name="charisma" value="{{ character.charisma }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}

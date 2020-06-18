@@ -34,4 +34,4 @@ class Characters(db.Model, UserMixin):
     charisma = db.Column(db.String(30), nullable=False, unique=False)
     
     def __repr__(self):
-        return ''.join(['UserID: ', str(self.id), '\r\n', 'Email: ', self.email])
+        return ''.join(['UserID: ', str(Users.id), '\r\n', 'Character ID: ', self.id])

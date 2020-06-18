@@ -1,8 +1,8 @@
 from flask_login import login_user, current_user, logout_user, login_required
 from application import app, db, bcrypt
 from application import app
-from application.forms import RegistrationForm, LoginForm
-from application.models import Users
+from application.forms import RegistrationForm, LoginForm, createcharacter
+from application.models import Users, Characters
 from flask import render_template, redirect, url_for, request, flash
 from flask import Flask, render_template
 
@@ -41,3 +41,67 @@ def login():
             else:
                 return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)
+
+@app.route('/mycharacters.html', methods=['GET', 'POST'])
+def mycharacters():
+    characters = Characters.query.all()
+    return render_template('mycharacters.html',characters = characters, title='MyCharacters')
+
+@app.route('/charactersheet.html', methods=['GET', 'POST'])
+def charactersheet():
+    form = createcharacter()
+    if form.validate_on_submit():
+        character = Characters(Characte_name=form.Characte_name.data,
+                               first_name=form.first_name.data,
+                               char_class=form.char_class.data,
+                               background=form.background.data, 
+                               race=form.race.data,
+                               alignment=form.alignment.data, 
+                               experience_points=form.experience_points.data, 
+                               strength=form.strength.data, 
+                               dexterity=form.dexterity.data, 
+                               constitution=form.constitution.data, 
+                               intelligence=form.intelligence.data, 
+                               wisdom=form.wisdom.data, 
+                               charisma=form.charisma.data)
+
+        db.session.add(character)
+        db.session.commit()
+
+        return redirect(url_for('mycharacters'))
+    return render_template('charactersheet.html', title='Create Character', form=form)
+
+@app.route('/delete/<int:id>')
+def delete(id):
+    character = Characters.query.get_or_404(id)
+
+    try:
+        db.session.delete(character)
+        db.session.commit()
+        return redirect('/')
+    except:
+        return "There was a problem deleting data."
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    character = Characters.query.get_or_404(id)
+
+    if request.method == 'POST':
+        character.Characte_name = request.form['name']
+        character.strength = request.form['strength']
+        character.dexterity = request.form['dexterity']
+        character.constitution = request.form['constitution']
+        character.intelligence = request.form['intelligence']
+        character.wisdom = request.form['wisdom']
+        character.charisma = request.form['charisma']
+
+        try:
+            db.session.commit()
+            return redirect(url_for('mycharacters'))
+        except:
+            return "There was a problem updating data."
+
+    else:
+        title = "Update Data"
+        return render_template('update.html', title=title, character=character)
+

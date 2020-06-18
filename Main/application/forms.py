@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from application.models import Users
+from application.models import Users, Characters
 
 class RegistrationForm(FlaskForm):
     email = StringField('Email',
@@ -57,3 +57,76 @@ class LoginForm(FlaskForm):
 	remember = BooleanField('Remember Me')
     
 	submit = SubmitField('Login')
+ 
+class createcharacter(FlaskForm):
+    Characte_name = StringField('Character Name',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    first_name = StringField('Player Name',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    background = StringField('Background',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    char_class = StringField('Class',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    race = StringField('Race',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    first_name = StringField('Player Name',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    alignment = StringField('Alignment',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    experience_points = StringField('XP Points',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    strength = StringField('Strength',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    dexterity = StringField('Dexterity',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    constitution = StringField('Constitution',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    intelligence = StringField('Intelligence',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    wisdom = StringField('Wisdom',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    charisma = StringField('Charisma',
+            validators = [
+                DataRequired(),
+            ]
+    )
+    submit = SubmitField('Save Character')

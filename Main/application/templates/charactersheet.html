@@ -1,0 +1,211 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginsignup.css') }}">
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/cover.css') }}" rel="stylesheet">
+{{super()}}
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+{% endblock %}
+
+
+{% block title %}
+Character Sheet
+{% endblock %}
+
+{% block content %}
+
+<div class="signup-form">
+    <div class="masthead clearfix">
+        <div class="inner">
+          <h4 class="masthead-brand">R20+</h4>
+          <nav class="nav nav-masthead">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="">About</a>
+            <a class="nav-link" href="">My Characters</a>
+            <a class="nav-link" href="login.html">Login</a>
+          </nav>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    <form method="POST" action="" >
+        {{ form.hidden_tag() }}
+		<h2>Details</h2>
+		<p class="hint-text">Here you create your character details.</p>
+    <div class="form-group">
+			<div class="form-group">
+                {{ form.Characte_name.label }}
+                <br> 
+                {{ form.Characte_name }}
+                {% if form.Characte_name.errors %}
+                <div class='error'>
+                    {% for error in form.Characte_name.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.first_name.label }}
+                <br> 
+                {{ form.first_name }}
+                {% if form.first_name.errors %}
+                <div class='error'>
+                    {% for error in form.first_name.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.background.label }}
+            <br> 
+            {{ form.background }}
+            {% if form.background.errors %}
+            <div class='error'>
+                {% for error in form.background.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.char_class.label }}
+            <br> 
+            {{ form.char_class }}
+            {% if form.char_class.errors %}
+            <div class='error'>
+                {% for error in form.char_class.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.race.label }}
+            <br> 
+            {{ form.race }}
+            {% if form.race.errors %}
+            <div class='error'>
+                {% for error in form.race.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.alignment.label }}
+            <br> 
+            {{ form.alignment }}
+            {% if form.alignment.errors %}
+            <div class='error'>
+                {% for error in form.alignment.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.experience_points.label }}
+            <br> 
+            {{ form.experience_points }}
+            {% if form.experience_points.errors %}
+            <div class='error'>
+                {% for error in form.experience_points.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+          </div>     	
+        </div>
+    {{ form.hidden_tag() }}
+  <h2>Attributes</h2>
+  <p class="hint-text">Here you create your character attributes.</p>
+  <div class="form-group">
+    <div class="form-group">
+              {{ form.strength.label }}
+              <br> 
+              {{ form.strength }}
+              {% if form.strength.errors %}
+              <div class='error'>
+                  {% for error in form.strength.errors %}
+                      <span>{{ error }}</span>
+                  {% endfor %}
+              </div>
+              {% endif %}
+          </div>
+          <div class="form-group">
+              {{ form.dexterity.label }}
+              <br> 
+              {{ form.dexterity }}
+              {% if form.dexterity.errors %}
+              <div class='error'>
+                  {% for error in form.dexterity.errors %}
+                      <span>{{ error }}</span>
+                  {% endfor %}
+              </div>
+              {% endif %}
+        </div>
+        <div class="form-group">
+          {{ form.constitution.label }}
+          <br> 
+          {{ form.constitution }}
+          {% if form.constitution.errors %}
+          <div class='error'>
+              {% for error in form.constitution.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{ form.intelligence.label }}
+          <br> 
+          {{ form.intelligence }}
+          {% if form.intelligence.errors %}
+          <div class='error'>
+              {% for error in form.intelligence.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{ form.wisdom.label }}
+          <br> 
+          {{ form.wisdom }}
+          {% if form.wisdom.errors %}
+          <div class='error'>
+              {% for error in form.wisdom.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{ form.charisma.label }}
+          <br> 
+          {{ form.charisma }}
+          {% if form.charisma.errors %}
+          <div class='error'>
+              {% for error in form.charisma.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+          {% endif %}
+        </div>     	
+      </div>
+      <br>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-lg btn-block">Save Character</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

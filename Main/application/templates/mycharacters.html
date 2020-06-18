@@ -1,1 +1,93 @@
-<h1>HELLO!</h1>
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block meta %}
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{super()}}
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loginsignup.css') }}">
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/cover.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+{% endblock %}
+
+{% block title %}
+R20+
+{% endblock %}
+
+{% block content %}
+    <body>
+    
+        <div class="site-wrapper">
+          
+          <div class="site-wrapper-inner">
+            
+            <div class="cover-container">
+              
+              <div class="masthead clearfix">
+                <div class="inner">
+                  <h4 class="masthead-brand">R20+</h4>
+                  <nav class="nav nav-masthead">
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="">About</a>
+                    <a class="nav-link" href="mycharacters.html">My Characters</a>
+                    <a class="nav-link" href="login.html">Login</a>
+                  </nav>
+                </div>
+              </div>
+              <h2>
+                <a href="charactersheet.html">
+                  Click here to create a new Character!
+                </a>
+              </h2>
+              <br>
+              <br>
+              <br>
+              
+            {% if characters %}
+                {% for character in characters %}
+                <h3>Click name & attributes to edit them.</h3>
+                <div class="card" style="width: 30rem; margin:0 auto;">
+                    <div class="card-body">
+                        <h2>
+                            <a href="/update/{{ character.id }}">Character Name: {{ character.Characte_name }}
+                            </a>
+                          </h2>
+                      <h4 class="card-subtitle mb-2 text-muted">Player name: {{ character.first_name }}</h4>
+                      <h5 class="card-text">Background: {{ character.background }}</h5>
+                      <h5 class="card-text">Allignment: {{ character.alignment }}</h5>
+                      <h5 class="card-text">Class: {{ character.char_class }}</h5>
+                      <h5 class="card-text">Race: {{ character.race }}</h5>
+                      <a href="/update/{{ character.id }}">Str: {{ character.strength }}</a>
+                      <a href="/update/{{ character.id }}">Dex: {{ character.dexterity }}</a>
+                      <a href="/update/{{ character.id }}">Con: {{ character.constitution }}</a>
+                      <a href="/update/{{ character.id }}">Int: {{ character.intelligence }}</a>
+                      <a href="/update/{{ character.id }}">Wis: {{ character.wisdom }}</a>
+                      <a href="/update/{{ character.id }}">Cha: {{ character.charisma }}</a>
+                      <a class="card-link" href="/delete/{{ character.id }}" role="button">Delete</a>
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+	            {% endfor %}
+            {% else %}
+            <h1>Looks like you have no Characters :(</h1>
+            <br>
+            <h2>
+                <a href="charactersheet.html">
+                  Click here to create one!
+                </a>
+              </h2>
+            {% endif %}
+            </div>
+          </div>
+          
+        </div>
+    </body>
+{% endblock %}
