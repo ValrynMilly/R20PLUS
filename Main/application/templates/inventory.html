@@ -41,6 +41,7 @@ Inventory
       {% for inv in inventory %}
       <div class="card" style="width: 30rem; margin:0 auto;">
           <div class="card-body">
+            <h3 class="card-text">Character Name: {{ inv.characters.Characte_name }}</h3>
             <h5 class="card-text">Scrolls: {{ inv.scrolls }}</h5>
             <h5 class="card-text">Keys: {{ inv.keys }}</h5>
             <h5 class="card-text">Arrows: {{ inv.arrows }}</h5>
@@ -128,6 +129,18 @@ Inventory
                 {% if form.longsword.errors %}
                 <div class='error'>
                     {% for error in form.longsword.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.character_name.label }}
+                <br> 
+                {{ form.character_name }}
+                {% if form.character_name.errors %}
+                <div class='error'>
+                    {% for error in form.character_name.errors %}
                         <span>{{ error }}</span>
                     {% endfor %}
                 </div>

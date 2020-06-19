@@ -2,7 +2,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 from application import app, db, bcrypt
 from application import app
 from application.forms import RegistrationForm, LoginForm, createcharacter, inventoryform
-from application.models import Users, Characters, inventory
+from application.models import Users, Characters, Inventory
 from flask import render_template, redirect, url_for, request, flash
 from flask import Flask, render_template
 
@@ -74,14 +74,16 @@ def charactersheet():
 @app.route('/inventory.html', methods=['GET', 'POST'])
 def inventories():
     form = inventoryform()
-    inventories = inventory.query.all()
+    inventories = Inventory.query.all()
     if form.validate_on_submit():
-        inv = inventory(health_potions=form.health_potions.data,
+        character = Characters.query.filter_by(Characte_name=form.character_name.data).first()
+        inv = Inventory(health_potions=form.health_potions.data,
                         scrolls=form.scrolls.data,
                         keys=form.keys.data,
                         arrows=form.arrows.data, 
                         shortsword=form.shortsword.data,
-                        longsword=form.longsword.data)
+                        longsword=form.longsword.data,
+                        characters=character)
 
         db.session.add(inv)
         db.session.commit()

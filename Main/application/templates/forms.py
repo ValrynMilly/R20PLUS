@@ -156,7 +156,7 @@ class inventoryform(FlaskForm):
             validators = [
             ]
     )
-    character_name = StringField('Character Name',
+    Character_name = StringField('Character Name',
             validators = [
             ]
     )
