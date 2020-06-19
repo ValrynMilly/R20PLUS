@@ -1,8 +1,8 @@
 from flask_login import login_user, current_user, logout_user, login_required
 from application import app, db, bcrypt
 from application import app
-from application.forms import RegistrationForm, LoginForm, createcharacter
-from application.models import Users, Characters
+from application.forms import RegistrationForm, LoginForm, createcharacter, inventoryform
+from application.models import Users, Characters, inventory
 from flask import render_template, redirect, url_for, request, flash
 from flask import Flask, render_template
 
@@ -70,6 +70,24 @@ def charactersheet():
 
         return redirect(url_for('mycharacters'))
     return render_template('charactersheet.html', title='Create Character', form=form)
+
+@app.route('/inventory.html', methods=['GET', 'POST'])
+def inventories():
+    form = inventoryform()
+    inventories = inventory.query.all()
+    if form.validate_on_submit():
+        inv = inventory(health_potions=form.health_potions.data,
+                        scrolls=form.scrolls.data,
+                        keys=form.keys.data,
+                        arrows=form.arrows.data, 
+                        shortsword=form.shortsword.data,
+                        longsword=form.longsword.data)
+
+        db.session.add(inv)
+        db.session.commit()
+        
+        return redirect(url_for('inventories'))
+    return render_template('inventory.html', inventory = inventories, title='inventory', form=form)
 
 @app.route('/delete/<int:id>')
 def delete(id):

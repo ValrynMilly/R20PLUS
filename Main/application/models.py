@@ -35,3 +35,16 @@ class Characters(db.Model, UserMixin):
     
     def __repr__(self):
         return ''.join(['UserID: ', str(Users.id), '\r\n', 'Character ID: ', self.id])
+    
+class inventory(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    health_potions = db.Column(db.Integer, nullable=True)
+    scrolls = db.Column(db.Integer, nullable=True)
+    keys = db.Column(db.Integer, nullable=True)
+    arrows = db.Column(db.Integer, nullable=True)
+    shortsword = db.Column(db.Integer, nullable=True)
+    longsword = db.Column(db.Integer, nullable=True)
+
+    
+    def __repr__(self):
+        return ''.join(['UserID: ', str(Users.id), '\r\n', 'Inventory ID: ', self.id])

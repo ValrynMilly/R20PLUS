@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from application.models import Users, Characters
+from application.models import Users, Characters, inventory
 
 class RegistrationForm(FlaskForm):
     email = StringField('Email',
@@ -130,3 +130,30 @@ class createcharacter(FlaskForm):
             ]
     )
     submit = SubmitField('Save Character')
+
+class inventoryform(FlaskForm):
+    health_potions = StringField('Health Potions',
+            validators = [
+            ]
+    )
+    scrolls = StringField('Scrolls',
+            validators = [
+            ]
+    )
+    keys = StringField('Keys',
+            validators = [
+            ]
+    )
+    arrows = StringField('Arrows',
+            validators = [
+            ]
+    )
+    shortsword = StringField('Short Swords',
+            validators = [
+            ]
+    )
+    longsword = StringField('Long Swords',
+            validators = [
+            ]
+    )
+    submit = SubmitField('Add Inventory')
