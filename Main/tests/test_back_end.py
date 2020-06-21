@@ -181,3 +181,29 @@ class CreateCharacter(TestBase):
         self.assertIn(b'test_race', response.data)
         self.assertIn(b'test_allign', response.data)
         
+class CreateInventory(TestBase):
+
+    def test_createinventory(self):
+        """
+        Test that a user can create a set in inventory
+        """
+        with self.client:
+            logging_in(self)
+            response = self.client.post(
+                    '/inventory.html',
+                    data = dict(
+                        health_potions="1",
+                        scrolls="1",
+                        keys="1",
+                        arrows="1",
+                        shortsword="1",
+                        longsword="1",
+                        ),
+                    follow_redirects=True
+                    )
+        self.assertIn(b'test_charname', response.data)
+        self.assertIn(b'test_playername', response.data)
+        self.assertIn(b'test_charclass', response.data)
+        self.assertIn(b'test_background', response.data)
+        self.assertIn(b'test_race', response.data)
+        self.assertIn(b'test_allign', response.data)
