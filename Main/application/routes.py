@@ -14,8 +14,6 @@ def home():
 @app.route('/signup.html', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-    if current_user.is_authenticated:
-        return redirect(url_for('home')) #If user is authenticated it sends them to the landing page
     if form.validate_on_submit():
         hash_pw = bcrypt.generate_password_hash(form.password.data)
 
@@ -30,8 +28,6 @@ def register():
 
 @app.route("/login.html", methods=['GET', 'POST'])
 def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('home')) #If user is authenticated it sends them to the landing page
     form = LoginForm()
     if form.validate_on_submit():
         user = Users.query.filter_by(email=form.email.data).first()
@@ -46,16 +42,11 @@ def login():
 
 @app.route('/mycharacters.html', methods=['GET', 'POST'])
 def mycharacters():
-    if current_user.is_authenticated:
-        characters = Characters.query.all()
-        return render_template('mycharacters.html',characters = characters, title='MyCharacters')
-    else:
-        return redirect(url_for('home'))
+    characters = Characters.query.all()
+    return render_template('mycharacters.html',characters = characters, title='MyCharacters')
 
 @app.route('/charactersheet.html', methods=['GET', 'POST'])
 def charactersheet():
-    if current_user.is_anonymous:
-        return redirect(url_for('home'))
     form = createcharacter()
     if form.validate_on_submit():
         character = Characters(Characte_name=form.Characte_name.data,
@@ -80,8 +71,6 @@ def charactersheet():
 
 @app.route('/inventory.html', methods=['GET', 'POST'])
 def inventories():
-    if current_user.is_anonymous:
-        return redirect(url_for('home'))
     form = inventoryform()
     inventories = Inventory.query.all()
     if form.validate_on_submit():
