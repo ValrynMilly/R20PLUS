@@ -29,7 +29,7 @@ def register():
 @app.route("/login.html", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('home')) #If user is authenticated it sends them to the landing page
+        return redirect(url_for('home.html')) #If user is authenticated it sends them to the landing page
     form = LoginForm()
     if form.validate_on_submit():
         user = Users.query.filter_by(email=form.email.data).first()
