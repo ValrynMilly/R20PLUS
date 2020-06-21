@@ -57,3 +57,6 @@ It would have been nice to include a random dice roller so the user doesnt have 
 Simple custom timers users can set to help them with their gameplay and campaign.
 ### Finances
 Manage user finances much like attributes. Diamonds, Gold, Silver, Copper.
+
+### Back End Testing
+Further back end testing is required, there are still some features that have not been tested.
