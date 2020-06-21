@@ -2,12 +2,25 @@
 
 R20+ is a simple web-app where you can host all your character sheets from Dungeons & Dragons 5E. You can create, roll or edit your character without the need of pen and paper. This app was created in Python 3, Flask, Flask-Bootstrap, Selenium, Gunicorn, GCP SQL Instances & many others. The program is hosted on Google Cloud Platform & automated in Jenkins.
 
+The Purpose of this project wwas to creat a CRUD application (Create, Read, Update, Delete) wwith utalisation of supporting tools, methodologies and technologies that that encapsulate all core modules covered during training. Tools and methodologies include. 
+
+*Kanban Board: Trello or an equivalent Kanban Board
+*Database: GCP SQL Server or other Cloud Hosted managed Database.
+*Programming language: Python
+*Unit Testing with Python (Pytest)
+*Integration Testing with Python (Selenium)
+*Front-end: Flask (HTML)
+*Version Control: Git
+*CI Server: Jenkins
+*Cloud server: GCP Compute Engine
+
 ### Visit the site
 #### [Click this link](http://35.246.21.165:5000/)
 
 # Table of Contents
 ## Navigate across Content
 - [Tutorial](#Tutorial)
+- [Database](#Database)
 - [Risk-Assessment](#Risk-Assessment)
 - [Trello](#Trello)
 - [Developer-notes](#Developer-notes)
@@ -36,6 +49,8 @@ R20+ is a simple web-app where you can host all your character sheets from Dunge
 ![picture](Documentation/MDI/set.png)
 
 #### Step 12) To edit your inventory set, click any one of the items and you will be directed to the edit page much like the character edit.
+
+# Database
 
 # Risk-Assessment
 ![picture](Documentation/MDI/Riskassessment.png)
