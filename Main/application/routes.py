@@ -45,8 +45,6 @@ def login():
 @app.route('/mycharacters.html', methods=['GET', 'POST'])
 def mycharacters():
     characters = Characters.query.all()
-    if not current_user.is_anonymous:
-        return redirect(url_for('home'))
     return render_template('mycharacters.html',characters = characters, title='MyCharacters')
 
 @app.route('/charactersheet.html', methods=['GET', 'POST'])
