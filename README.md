@@ -11,7 +11,7 @@
 - [Tutorial](#Tutorial)
 - [Risk-Assessment](#Risk-Assessment)
 - [Trello](#Trello)
-- [Notes from developer](#Notes from developer)
+- [Developer-notes](#Developer-notes)
 
 # Tutorial
 ### Turorial documented as first time user.
@@ -49,7 +49,7 @@
 ## Sprint 3
 ![picture](Documentation/Trello/Sprint3.png)
 
-# Notes from developer
+# Developer-notes
 ## In this section I will discuss what I would've wanted to include into the program or further processes I should have taken. 
 
 ### Dice rolling
