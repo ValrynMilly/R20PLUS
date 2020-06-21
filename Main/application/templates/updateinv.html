@@ -1,0 +1,90 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+<link href="{{ url_for('static', filename='css/loginsignup.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/cover.css') }}" rel="stylesheet">
+{{super()}}
+{% endblock %}
+
+{% block title %}
+Update Data
+{% endblock %}
+
+{% block content %}
+<div class="signup-form">
+    <div class="masthead clearfix">
+      <div class="inner">
+        <h1 class="masthead-brand">R20+</h1>
+        <nav class="nav nav-masthead">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="inventory.html">Inventory</a>
+          <a class="nav-link" href="mycharacters.html">My Characters</a>
+          <a class="nav-link" href="login.html">Login</a>
+        </nav>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  <h1 class="my-4">Update Inventory</h1>
+    <form action="/updateinv/{{ inventory.id }}" method="POST">
+        <div class="form-row">
+            <h5>Health Potions</h5>
+            <div class="col-sm-6 my-1">
+            <input type="text" class="form-control" name="health_potions" value="{{ inventory.health_potions }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Scrolls</h5>
+            <div class="col-sm-6 my-1">
+            <input type="text" class="form-control" name="scrolls" value="{{ inventory.scrolls }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Keys</h5>
+            <div class="col-sm-6 my-1">
+            <input type="text" class="form-control" name="keys" value="{{ inventory.keys }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>arrows</h5>
+            <div class="col-sm-6 my-1">
+            <input type="text" class="form-control" name="arrows" value="{{ inventory.arrows }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Short Sword's</h5>
+            <div class="col-sm-6 my-1">
+            <input type="text" class="form-control" name="shortsword" value="{{ inventory.shortsword }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+        <div class="form-row">
+            <h5>Long Sword's</h5>
+            <div class="col-sm-6 my-1">
+            <input type="text" class="form-control" name="longsword" value="{{ inventory.longsword }}">
+        </div>
+        <div class="col-sm-6 my-4">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}

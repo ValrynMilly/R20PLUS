@@ -13,6 +13,8 @@ def home():
 
 @app.route('/signup.html', methods=['GET', 'POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
         hash_pw = bcrypt.generate_password_hash(form.password.data)
@@ -45,6 +47,8 @@ def login():
 @app.route('/mycharacters.html', methods=['GET', 'POST'])
 def mycharacters():
     characters = Characters.query.all()
+    if current_user.is_anonymous:
+        return redirect(url_for('home'))
     return render_template('mycharacters.html',characters = characters, title='MyCharacters')
 
 @app.route('/charactersheet.html', methods=['GET', 'POST'])
@@ -75,6 +79,8 @@ def charactersheet():
 def inventories():
     form = inventoryform()
     inventories = Inventory.query.all()
+    if current_user.is_anonymous:
+        return redirect(url_for('home'))
     if form.validate_on_submit():
         character = Characters.query.filter_by(Characte_name=form.character_name.data).first()
         inv = Inventory(health_potions=form.health_potions.data,
@@ -88,7 +94,7 @@ def inventories():
         db.session.add(inv)
         db.session.commit()
         
-        return redirect(url_for('inventories'))
+        return redirect(url_for('inventory'))
     return render_template('inventory.html', inventory = inventories, title='inventory', form=form)
 
 @app.route('/delete/<int:id>')
@@ -125,3 +131,24 @@ def update(id):
         title = "Update Data"
         return render_template('update.html', title=title, character=character)
 
+@app.route('/updateinv/<int:id>', methods=['GET', 'POST'])
+def updateinv(id):
+    inventory = Inventory.query.get_or_404(id)
+
+    if request.method == 'POST':
+        inventory.health_potions = request.form['health_potions']
+        inventory.scrolls = request.form['scrolls']
+        inventory.keys = request.form['keys']
+        inventory.arrows = request.form['arrows']
+        inventory.shortsword = request.form['shortsword']
+        inventory.longsword = request.form['longsword']
+
+        try:
+            db.session.commit()
+            return redirect(url_for('inventories'))
+        except:
+            return redirect(url_for('inventory'))
+
+    else:
+        title = "Update Data"
+        return render_template('updateinv.html', title=title, inventory=inventory)

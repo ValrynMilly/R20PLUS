@@ -38,19 +38,20 @@ Inventory
       <br>
       <br>
       {% if inventory %}
-      {% for inv in inventory %}
-      <div class="card" style="width: 30rem; margin:0 auto;">
-          <div class="card-body">
-            <h3 class="card-text">Character Name: {{ inv.characters.Characte_name }}</h3>
-            <h5 class="card-text">Scrolls: {{ inv.scrolls }}</h5>
-            <h5 class="card-text">Keys: {{ inv.keys }}</h5>
-            <h5 class="card-text">Arrows: {{ inv.arrows }}</h5>
-            <h5 class="card-text">Short-Swords: {{ inv.shortsword }}</h5>
-            <h5 class="card-text">Long-Swords: {{ inv.longsword }}</h5>
-          </div>
-        </div>
-        <br>
-        <br>
+        {% for inv in inventory %}
+        <div class="card" style="width: 30rem; margin:0 auto;">
+              <div class="card-body">
+                <h3 class="card-text">Character Name: {{ inv.characters.Characte_name }}</h3>
+                <a href="/updateinv/{{ inv.id }}" style="font-size: 10pt;">Helth Potions: {{ inv.health_potions }}</a>
+                <a href="/updateinv/{{ inv.id }}" style="font-size: 10pt;">Scrolls: {{ inv.scrolls }}</a>
+                <a href="/updateinv/{{ inv.id }}" style="font-size: 10pt;">Keys: {{ inv.keys }}</a>
+                <a href="/updateinv/{{ inv.id }}" style="font-size: 10pt;">Arrows: {{ inv.arrows }}</a>
+                <a href="/updateinv/{{ inv.id }}" style="font-size: 10pt;">Short Sword's: {{ inv.shortsword }}</a>
+                <a href="/updateinv/{{ inv.id }}" style="font-size: 10pt;">Long Sword's: {{ inv.longsword }}</a>
+            </div>
+            </div>
+            <br>
+            <br>
       {% endfor %}
   {% else %}
   {% endif %}
@@ -59,7 +60,7 @@ Inventory
       <br>
     <form method="POST" action="" >
         {{ form.hidden_tag() }}
-		<h2>Inventory</h2>
+		<h2> New Slot</h2>
 		<p class="hint-text">Here you can add to your inventory.</p>
     <div class="form-group">
 			<div class="form-group">
