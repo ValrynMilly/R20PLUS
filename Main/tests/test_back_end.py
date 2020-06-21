@@ -201,12 +201,12 @@ class CreateInventory(TestBase):
                         ),
                     follow_redirects=True
                     )
-        self.assertIn(b'test_charname', response.data)
-        self.assertIn(b'test_playername', response.data)
-        self.assertIn(b'test_charclass', response.data)
-        self.assertIn(b'test_background', response.data)
-        self.assertIn(b'test_race', response.data)
-        self.assertIn(b'test_allign', response.data)
+        self.assertIn(b'1', response.data)
+        self.assertIn(b'1', response.data)
+        self.assertIn(b'1', response.data)
+        self.assertIn(b'1', response.data)
+        self.assertIn(b'1', response.data)
+        self.assertIn(b'1', response.data)
         
         
 class UpdateCharacter(TestBase):
