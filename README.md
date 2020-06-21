@@ -43,11 +43,11 @@
 
 # Trello
 ## Sprint 1
-![picture](Documentation/Trello/Sprint 1.jpg)
+![picture](Documentation/Trello/Sprint 1.png)
 ## Sprint 2
-![picture](Documentation/Trello/Sprint 2.jpg)
+![picture](Documentation/Trello/Sprint 2.png)
 ## Sprint 3
-![picture](Documentation/Trello/Sprint 3.jpg)
+![picture](Documentation/Trello/Sprint 3.png)
 
 # Notes from developer
 ## In this section I will discuss what I would've wanted to include into the program or further processes I should have taken. 
