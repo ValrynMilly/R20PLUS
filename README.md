@@ -3,7 +3,7 @@
 ### R20+ is a simple web-app where you can host all your character sheets from Dungeons & Dragons 5E. You can create, roll or edit your character without the need of pen and paper. This app was created in Python 3, Flask, Flask-Bootstrap, Selenium, Gunicorn, GCP SQL Instances & many others. The program is hosted on Google Cloud Platform & automated in Jenkins.
 
 ### Visit the site
-#### [Jenkins Host](http://35.246.21.165:5000/)
+#### [Click this link](http://35.246.21.165:5000/)
 
 # Table of Contents
 ## Navigate across Content
