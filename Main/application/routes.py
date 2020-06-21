@@ -14,7 +14,7 @@ def home():
 @app.route('/signup.html', methods=['GET', 'POST'])
 def register():
     if current_user.is_active:
-        return redirect(url_for('home.html'))
+        return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
         hash_pw = bcrypt.generate_password_hash(form.password.data)
@@ -47,7 +47,7 @@ def login():
 @app.route('/mycharacters.html', methods=['GET', 'POST'])
 def mycharacters():
     if current_user.is_anonymous:
-        return redirect(url_for('home.html'))
+        return redirect(url_for('home'))
     characters = Characters.query.all()
     return render_template('mycharacters.html',characters = characters, title='MyCharacters')
 
