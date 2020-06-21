@@ -68,7 +68,8 @@ In terms of Entity Relationship Diagram I decided to follow  the structure of th
 
 # Testing
 
-![picture](Documentation/MDI/Testing.png
+![picture](Documentation/MDI/Testing.png)
+
 Testing was done through Pytest Unit Testing & ran through Jenkins with Selenium & Gunicorn. I managed 76% coverage through testing. While I believe this is not enough considering some features still require testing, this should suffice to meet project specifications.
 
 # Risk-Assessment
