@@ -90,7 +90,7 @@ The Trello Board for this project followed the MoSCoW method. Must have, Should 
 ## In this section I will discuss what I would've wanted to include into the program or further processes I should have taken. 
 
 ### Dice rolling
-It would have been nice to include a random dice roller so the user doesnt have to manually put in the attributes. This wouldve added to automation but with the time constraints that this project had it would have proven very difficult.
+It would have been nice to include a random dice roller so the user doesn't have to manually put in the attributes. This would've added to automation but with the time constraints that this project had it would have proven very difficult.
 
 ### Time window
 Simple custom timers users can set to help them with their gameplay and campaign.
@@ -102,4 +102,4 @@ Manage user finances much like attributes. Diamonds, Gold, Silver, Copper.
 Further back end testing is required, there are still some features that have not been tested.
 
 ### Further Front End Testing
-Further testing using Xpaths is required in this project. 
+Further testing using XPaths is required in this project. 
