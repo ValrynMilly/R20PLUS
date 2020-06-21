@@ -78,6 +78,8 @@ Testing was done through Pytest Unit Testing & ran through Jenkins with Selenium
 # Trello
 The Trello Board for this project followed the MoSCoW method. Must have, Should have, Could have, Wont have (this time). I made sure each feature was assigned to the correct principle. 
 
+[Link to Trello](https://trello.com/b/DbTEqf4Q)
+
 ## Sprint 1
 ![picture](Documentation/Trello/Sprint1.png)
 
