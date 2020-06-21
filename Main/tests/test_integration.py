@@ -54,9 +54,9 @@ class TestRegistration(TestBase):
 
         # Click register menu link
         self.driver.find_element_by_xpath("/html/body/div/div/div/div[1]/div/nav/a[4]").click()
-        time.sleep(1)
+        time.sleep(2)
         self.driver.find_element_by_xpath("/html/body/div/div[2]/a").click()
-        time.sleep(1)
+        time.sleep(2)
 
         # Fill in registration form
         self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
@@ -71,10 +71,10 @@ class TestRegistration(TestBase):
         self.driver.find_element_by_xpath('//*[@id="confirm_password"]').send_keys(
             test_admin_password)
         self.driver.find_element_by_xpath('/html/body/div/form/div[6]/button').click()
-        time.sleep(1)
+        time.sleep(2)
 
         # Assert that browser redirects to my characters page
-        assert url_for('mycharacters') in self.driver.current_url
+        assert url_for('home') in self.driver.current_url
 
 if __name__ == '__main__':
     unittest.main(port=5000)
