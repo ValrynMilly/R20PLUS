@@ -8,12 +8,12 @@
 
 # Table of Contents
 ## Navigate across Content
-- [Tutorial.](#Tutorial.)
-- [Risk Assessment.](#Risk Assessment.)
-- [Trello.](#Trello.)
-- [Notes from developer.](#Notes from developer.)
+- [Tutorial](#Tutorial)
+- [Risk Assessment](#Risk Assessment)
+- [Trello](#Trello)
+- [Notes from developer](#Notes from developer)
 
-# Tutorial.
+# Tutorial
 ### Turorial documented as first time user.
 #### Step 1) Navigate to Homepage. 
 ![picture](Documentation/MDI/homepage.png)
@@ -38,18 +38,18 @@
 
 #### Step 12) To edit your inventory set, click any one of the items and you will be directed to the edit page much like the character edit.
 
-# Risk Assessment.
+# Risk Assessment
 ![picture](Documentation/MDI/Riskassessment.png)
 
-# Trello.
+# Trello
 ## Sprint 1
-![picture](Documentation/Trello/Sprint 1.jpg)
+![picture](Documentation/Trello/Sprint 1.png)
 ## Sprint 2
-![picture](Documentation/Trello/Sprint 2.jpg)
+![picture](Documentation/Trello/Sprint 2.png)
 ## Sprint 3
-![picture](Documentation/Trello/Sprint 3.jpg)
+![picture](Documentation/Trello/Sprint 3.png)
 
-# Notes from developer.
+# Notes from developer
 ## In this section I will discuss what I would've wanted to include into the program or further processes I should have taken. 
 
 ### Dice rolling
