@@ -209,34 +209,3 @@ class CreateInventory(TestBase):
         self.assertIn(b'1', response.data)
         
         
-class UpdateCharacter(TestBase):
-
-    def test_updatecharacter(self):
-        """
-        Test that a user can create a Character
-        """
-        with self.client:
-            logging_in(self)
-            response = self.client.post(
-                    '/update/1.html',
-                    data = dict(
-                        first_name="test_playername",
-                        char_class="test_charclass",
-                        background="test_background",
-                        race="test_race",
-                        alignment="test_allign",
-                        experience_points="test_experience_points",
-                        strength="test_str",
-                        dexterity="test_dex",
-                        constitution="test_con",
-                        intelligence="test_intel",
-                        wisdom="test_wis",
-                        charisma="test_char",
-                        ),
-                    follow_redirects=True
-                    )
-        self.assertIn(b'test_playername', response.data)
-        self.assertIn(b'test_charclass', response.data)
-        self.assertIn(b'test_background', response.data)
-        self.assertIn(b'test_race', response.data)
-        self.assertIn(b'test_allign', response.data)
