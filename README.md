@@ -1,7 +1,12 @@
 # R20PLUS
-## An Intuitive online character sheet for Dungeons & Dragons!
+## An Intuitive online character sheet for Dungeons & Dragons 5th Edition!
 
-### Do you play Dungeons & Dragons? Are you tired of spending 15 minutes every session just getting the paperwork together? Well fear no more for R20PLUS is just up your street. Within this app you can host all your Characters ONLINE in a styalized intuitive way no paperwork no hassle!
+### R20+ is a simple web-app where you can host all your character sheets from Dungeons & Dragons 5E. You can create, roll or edit your character without the need of pen and paper.
 
-#TESTING JENKINS
-#TESTING TESTING
+## Table of Contents
+#### Navigate across Content
+- [Tutorial]
+
+## Tutorial.
+#### Step 1) Navigate to Homepage.
+![picture](Documentation/MDI/homepage.jpg)
