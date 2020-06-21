@@ -1,11 +1,17 @@
 # R20PLUS
 ## An Intuitive online character sheet for Dungeons & Dragons 5th Edition!
 
-### R20+ is a simple web-app where you can host all your character sheets from Dungeons & Dragons 5E. You can create, roll or edit your character without the need of pen and paper. This app was created in python 3, Flask, Flask-Bootstrap & many others. The program is hosted on Google Cloud Platform & automated in Jenkins. 
+### R20+ is a simple web-app where you can host all your character sheets from Dungeons & Dragons 5E. You can create, roll or edit your character without the need of pen and paper. This app was created in python 3, Flask, Flask-Bootstrap & many others. The program is hosted on Google Cloud Platform & automated in Jenkins.
+
+### Visit the site
+#### Jenkins: 35.246.21.165:5000
 
 # Table of Contents
 ## Navigate across Content
-- [Tutorial](#Tutorial)
+- [Tutorial.](#Tutorial.)
+- [Risk Assessment.](#Risk Assessment.)
+- [Trello.](#Trello.)
+- [Notes from developer.](#Notes from developer.)
 
 # Tutorial.
 ### Turorial documented as first time user.
@@ -31,3 +37,24 @@
 ![picture](Documentation/MDI/set.png)
 
 #### Step 12) To edit your inventory set, click any one of the items and you will be directed to the edit page much like the character edit.
+
+# Risk Assessment.
+![picture](Documentation/MDI/Riskassessment.png)
+
+# Trello.
+## Sprint 1
+![picture](Documentation/Trello/Sprint 1.jpg)
+## Sprint 2
+![picture](Documentation/Trello/Sprint 2.jpg)
+## Sprint 3
+![picture](Documentation/Trello/Sprint 3.jpg)
+
+# Notes from developer.
+## In this section I will discuss what I would've wanted to include into the program or further processes I should have taken. 
+
+### Dice rolling
+It would have been nice to include a random dice roller so the user doesnt have to manually put in the attributes. This wouldve added to automation but with the time constraints that this project had it would have proven very difficult.
+### Time window
+Simple custom timers users can set to help them with their gameplay and campaign.
+### Finances
+Manage user finances much like attributes. Diamonds, Gold, Silver, Copper.
