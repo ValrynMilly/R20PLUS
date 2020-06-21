@@ -15,7 +15,8 @@ def home():
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-    form = RegistrationForm()
+    else:
+        form = RegistrationForm()
     if form.validate_on_submit():
         hash_pw = bcrypt.generate_password_hash(form.password.data)
 
