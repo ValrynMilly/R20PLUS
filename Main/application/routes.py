@@ -45,8 +45,6 @@ def login():
 @app.route('/mycharacters.html', methods=['GET', 'POST'])
 def mycharacters():
     characters = Characters.query.all()
-    if current_user.is_anonymous:
-        return redirect(url_for('home'))
     return render_template('mycharacters.html',characters = characters, title='MyCharacters')
 
 @app.route('/charactersheet.html', methods=['GET', 'POST'])
@@ -77,8 +75,6 @@ def charactersheet():
 def inventories():
     form = inventoryform()
     inventories = Inventory.query.all()
-    if current_user.is_anonymous:
-        return redirect(url_for('home'))
     if form.validate_on_submit():
         character = Characters.query.filter_by(Characte_name=form.character_name.data).first()
         inv = Inventory(health_potions=form.health_potions.data,
@@ -92,7 +88,7 @@ def inventories():
         db.session.add(inv)
         db.session.commit()
         
-        return redirect(url_for('inventory'))
+        return redirect(url_for('inventories'))
     return render_template('inventory.html', inventory = inventories, title='inventory', form=form)
 
 @app.route('/delete/<int:id>')
